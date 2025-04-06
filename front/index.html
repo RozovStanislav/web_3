@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>«Мухоловка на обменник»</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body class="background-image-1">
+    <div class="content">
+        <h1>«Мухоловка на обменник»</h1>
+        <h2>«Мухоловка не только мух ловит – она и выгодные предложения хватает!»</h2>
+        <input type="text" id="search-input" placeholder="Поиск растений...">
+        <div id="plant-list" class="plant-grid"></div>
+        <a href="add-plant.html">Добавь свои растения на обмен</a>
+    </div>
+
+    <!-- Чат-виджет -->
+    <div id="chat-widget" class="chat-widget hidden">
+        <div class="chat-header">
+            Чат с ботом
+            <span class="close-chat">×</span>
+        </div>
+        <div class="chat-body" id="chat-messages"></div>
+        <div class="chat-suggestions" id="quick-replies">
+            <div class="suggestion">Как добавить растение?</div>
+            <div class="suggestion">Как работает обмен?</div>
+            <div class="suggestion">Правила сообщества</div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="user-input" placeholder="Напишите сообщение...">
+            <button id="send-button">Отправить</button>
+        </div>
+    </div>
+
+    <button id="chat-toggle" class="chat-toggle">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" width="24">
+    </button>
+
+    <script src="chat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

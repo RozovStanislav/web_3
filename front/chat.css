@@ -1,0 +1,115 @@
+/* Основные стили чат-виджета */
+#chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;  /* Немного шире */
+    height: 650px;  /* Увеличена высота (было 500px) */
+    max-height: 80vh; /* Ограничение по высоте экрана */
+    background: white;
+    border-radius: 16px;  /* Больше скругление */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);  /* Более мягкая тень */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;  /* Добавлена рамка */
+}
+
+/* Шапка чата (увеличена) */
+.chat-header {
+    background: #4CAF50;
+    color: white;
+    padding: 18px 20px;  /* Больше отступы */
+    font-size: 18px;  /* Крупнее текст */
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Область сообщений (теперь больше) */
+#chat-messages {
+    flex-grow: 1;
+    padding: 20px;  /* Больше отступы */
+    overflow-y: auto;
+    background: #f5f5f5;  /* Светлее фон */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;  /* Больше расстояние между сообщениями */
+}
+
+/* Сообщения (крупнее) */
+.message {
+    max-width: 85%;  /* Шире сообщения */
+    padding: 12px 18px;  /* Больше отступы */
+    font-size: 15px;  /* Крупнее текст */
+    line-height: 1.5;
+    border-radius: 20px;  /* Больше скругление */
+}
+
+/* Поле ввода (крупнее) */
+.chat-input-container {
+    padding: 15px;  /* Больше отступы */
+    background: white;
+    border-top: 1px solid #eee;
+}
+
+#user-input {
+    padding: 12px 18px;  /* Больше отступы */
+    font-size: 15px;  /* Крупнее текст */
+}
+
+/* Быстрые ответы (крупнее) */
+.suggestion {
+    padding: 8px 14px;  /* Больше отступы */
+    font-size: 13px;  /* Крупнее текст */
+}
+
+/* Кнопка открытия чата (крупнее) */
+#chat-toggle {
+    width: 70px;  /* Было 60px */
+    height: 70px;  /* Было 60px */
+    font-size: 24px;  /* Крупнее иконка */
+}
+
+/* Адаптация под мобильные */
+@media (max-width: 480px) {
+    #chat-widget {
+        width: 90vw;
+        height: 70vh;  /* Больше высота на мобильных */
+        bottom: 80px;  /* Поднято выше */
+    }
+    
+    #chat-toggle {
+        width: 60px;
+        height: 60px;
+        bottom: 15px;
+    }
+}
+
+/* Анимации */
+@keyframes messageAppear {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.message {
+    animation: messageAppear 0.3s ease-out;
+}
+
+/* Полоса прокрутки */
+#chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+#chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
